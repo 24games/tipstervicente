@@ -41,6 +41,17 @@
             z-index: 0;
         }
         
+        /* Mobile: usar imagem específica como background */
+        @media (max-width: 768px) {
+            body {
+                background: url('https://i.pinimg.com/736x/a0/4c/fb/a04cfb781dae03e258248e4e08aa62c1.jpg') center center / cover no-repeat fixed;
+            }
+            
+            body::before {
+                display: none;
+            }
+        }
+        
         header {
             position: fixed;
             top: 0;
