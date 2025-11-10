@@ -83,6 +83,21 @@
             gap: 1.5rem;
         }
         
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 
+                    0 12px 32px rgba(42, 171, 238, 0.3),
+                    0 0 0 0 rgba(42, 171, 238, 0.4);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 
+                    0 12px 32px rgba(42, 171, 238, 0.3),
+                    0 0 40px 8px rgba(42, 171, 238, 0);
+                transform: scale(1.02);
+            }
+        }
+        
         .avatar-wrapper {
             position: relative;
             width: 240px;
@@ -91,6 +106,7 @@
             background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
             padding: 6px;
             box-shadow: 0 12px 32px rgba(42, 171, 238, 0.3);
+            animation: pulse-glow 3s ease-in-out infinite;
         }
         
         .avatar-inner {
@@ -366,7 +382,7 @@
             <div class="left">
                 <div class="avatar-wrapper">
                     <div class="avatar-inner">
-                        <img src="data:image/svg+xml,%3Csvg width='228' height='228' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='228' height='228' fill='%230F1F35'/%3E%3Ccircle cx='114' cy='114' r='70' fill='%23162C47'/%3E%3Ccircle cx='114' cy='114' r='50' fill='%232AABEE' opacity='0.2'/%3E%3Ctext x='114' y='130' font-family='Arial' font-size='48' fill='%235DC4F5' text-anchor='middle' font-weight='bold'%3EVIP%3C/text%3E%3C/svg%3E" alt="Foto del autor" class="avatar">
+                        <img src="images/icone vicente.png" alt="Foto del autor" class="avatar">
                     </div>
                 </div>
                 
