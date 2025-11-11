@@ -173,15 +173,6 @@ export default function MinesVicentePage() {
         </a>
 
       </div>
-
-      {/* Focus visible para acessibilidade */}
-      <style jsx global>{`
-        a:focus-visible button,
-        button:focus-visible {
-          outline: 2px solid #60A5FA;
-          outline-offset: 4px;
-        }
-      `}</style>
     </main>
   )
 }

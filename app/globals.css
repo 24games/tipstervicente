@@ -9,5 +9,12 @@
   body {
     @apply bg-black text-white;
   }
+  
+  /* Focus visible para acessibilidade */
+  a:focus-visible button,
+  button:focus-visible {
+    outline: 2px solid #60A5FA;
+    outline-offset: 4px;
+  }
 }
 
