@@ -134,7 +134,7 @@ export default function MinesVicentePage() {
 
         {/* Botão principal com glow azul */}
         <a
-          href="https://t.me/+-RVi0AhIjw9iMTAx"
+          href="https://t.me/+AZ6Fl5IIYQ5mNjdh"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Entrar al grupo VIP"
