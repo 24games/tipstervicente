@@ -1,11 +1,16 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import RemainingSlots from './components/RemainingSlots'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Vicente Mines 💣 - Grupo VIP',
   description: '¡ÚLTIMOS CUPOS GRATUITOS! Asegura el tuyo ya',
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 }
 
 export default function MinesVicentePage() {
