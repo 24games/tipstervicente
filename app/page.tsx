@@ -1,8 +1,495 @@
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center">
-      <h1 className="text-4xl font-bold">Homepage</h1>
-    </main>
+    <>
+      <style jsx global>{`
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        body {
+            font-family: 'Sora', sans-serif;
+            background: #0A1628;
+            background-image: 
+                radial-gradient(circle at 15% 10%, #15283F 0%, transparent 50%),
+                radial-gradient(circle at 85% 90%, #0D1A2D 0%, transparent 50%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        header {
+            position: absolute;
+            top: 0;
+            left: -9999px;
+        }
+        
+        main {
+            width: 100%;
+            max-width: 1200px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card {
+            background: linear-gradient(180deg, #162C47 0%, #0F1F35 100%);
+            border-radius: 28px;
+            padding: 3.5rem;
+            box-shadow: 
+                0 30px 80px rgba(0, 0, 0, 0.35),
+                inset 0 0 0 1px rgba(42, 171, 238, 0.08);
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 
+                    0 12px 32px rgba(42, 171, 238, 0.3),
+                    0 0 0 0 rgba(42, 171, 238, 0.4);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 
+                    0 12px 32px rgba(42, 171, 238, 0.3),
+                    0 0 40px 8px rgba(42, 171, 238, 0);
+                transform: scale(1.02);
+            }
+        }
+        
+        .avatar-wrapper {
+            position: relative;
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
+            padding: 6px;
+            box-shadow: 0 12px 32px rgba(42, 171, 238, 0.3);
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+        
+        .avatar-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #0F1F35;
+            padding: 4px;
+            position: relative;
+        }
+        
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .badges {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            width: 100%;
+        }
+        
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 0.625rem 1rem;
+            height: 40px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #EAF6F3;
+            transition: all 220ms ease;
+        }
+        
+        .badge:hover {
+            border-color: rgba(42, 171, 238, 0.35);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: inset 0 0 0 1px rgba(42, 171, 238, 0.35);
+        }
+        
+        .badge svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+        
+        .right {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+        
+        .title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+            color: #E8F4F8;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cta-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: #2AABEE;
+            color: #FFFFFF;
+            font-size: 1.125rem;
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border-radius: 14px;
+            text-decoration: none;
+            box-shadow: 0 8px 24px rgba(42, 171, 238, 0.35);
+            transition: all 240ms cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta:hover {
+            background: #229ED9;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(42, 171, 238, 0.5);
+        }
+        
+        .cta:hover svg {
+            transform: rotate(8deg);
+        }
+        
+        .cta:focus-visible {
+            outline: 2px solid #2AABEE;
+            outline-offset: 2px;
+        }
+        
+        .cta svg {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            transition: transform 240ms ease;
+        }
+        
+        .cta-label {
+            font-size: 0.8125rem;
+            color: #9CB4C8;
+            font-weight: 400;
+        }
+        
+        .description {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: #9CB4C8;
+            font-weight: 400;
+        }
+        
+        .description strong {
+            font-weight: 700;
+            background: linear-gradient(135deg, #5DC4F5 0%, #2AABEE 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .benefits {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.875rem;
+        }
+        
+        .pill {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 0 1.5rem;
+            height: 58px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #EAF6F3;
+            transition: all 220ms ease;
+        }
+        
+        .pill:hover {
+            border-color: rgba(42, 171, 238, 0.4);
+            box-shadow: inset 0 0 0 1px rgba(42, 171, 238, 0.4);
+        }
+        
+        .pill-content {
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+        }
+        
+        .pill-content svg {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+        }
+        
+        .pill-arrow svg {
+            width: 16px;
+            height: 16px;
+            opacity: 0.4;
+        }
+        
+        .disclaimer {
+            text-align: center;
+            font-size: 0.8125rem;
+            color: #6B8299;
+            line-height: 1.5;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Responsivo Mobile */
+        @media (max-width: 768px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+            
+            .card {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                padding: 2rem 1.5rem;
+                border-radius: 24px;
+            }
+            
+            .left {
+                text-align: center;
+            }
+            
+            .avatar-wrapper {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .title {
+                font-size: 2.25rem;
+                text-align: center;
+            }
+            
+            .right {
+                gap: 1.5rem;
+            }
+            
+            .cta-wrapper {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .cta {
+                width: 100%;
+                justify-content: center;
+                min-height: 56px;
+            }
+            
+            .cta-label {
+                text-align: center;
+            }
+            
+            .description {
+                font-size: 1rem;
+                text-align: center;
+            }
+            
+            .pill {
+                height: 54px;
+                padding: 0 1.25rem;
+                font-size: 0.9375rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .title {
+                font-size: 1.875rem;
+            }
+            
+            .card {
+                padding: 1.75rem 1.25rem;
+            }
+            
+            .avatar-wrapper {
+                width: 160px;
+                height: 160px;
+            }
+        }
+      `}</style>
+
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+      <header>
+        <h1>Grupo VIP Gratis</h1>
+      </header>
+      
+      <main>
+        <section className="card" role="region" aria-label="Información del Grupo VIP">
+          <div className="left">
+            <div className="avatar-wrapper">
+              <div className="avatar-inner">
+                <img src="/images/icone vicente.png" alt="Foto del autor" className="avatar" />
+              </div>
+            </div>
+            
+            <div className="badges">
+              <div className="badge">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 2V5" stroke="#5DC4F5" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M16 2V5" stroke="#5DC4F5" strokeWidth="2" strokeLinecap="round"/>
+                  <rect x="3" y="4" width="18" height="18" rx="2" stroke="#5DC4F5" strokeWidth="2"/>
+                  <path d="M3 10H21" stroke="#5DC4F5" strokeWidth="2"/>
+                  <circle cx="8" cy="15" r="1" fill="#5DC4F5"/>
+                  <circle cx="12" cy="15" r="1" fill="#5DC4F5"/>
+                  <circle cx="16" cy="15" r="1" fill="#5DC4F5"/>
+                </svg>
+                Tips diarios
+              </div>
+              
+              <div className="badge">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#FFD700" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                </svg>
+                Cuotas 25x+
+              </div>
+              
+              <div className="badge">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#2AABEE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                </svg>
+                100% gratis
+              </div>
+            </div>
+          </div>
+          
+          <div className="right">
+            <h1 className="title">Grupo VIP Gratis</h1>
+            
+            <div className="cta-wrapper">
+              <a href="https://t.me/+-RVi0AhIjw9iMTAx" className="cta" aria-label="Unirse al grupo de Telegram">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 2L11 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M22 2L15 22L11 13L2 9L22 2Z" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                Unirse al grupo
+              </a>
+              <span className="cta-label">Sin spam · Sal cuando quieras</span>
+            </div>
+            
+            <p className="description">
+              Únete ahora a mi grupo de Telegram y recibe <strong>tips diarios</strong>, análisis rápido y <strong>cuotas 25x+</strong> todos los días.
+            </p>
+            
+            <ul className="benefits">
+              <li className="pill">
+                <div className="pill-content">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 8C19.657 8 21 6.657 21 5C21 3.343 19.657 2 18 2C16.343 2 15 3.343 15 5C15 6.657 16.343 8 18 8Z" stroke="#FF6B6B" strokeWidth="2"/>
+                    <path d="M6 15C7.657 15 9 13.657 9 12C9 10.343 7.657 9 6 9C4.343 9 3 10.343 3 12C3 13.657 4.343 15 6 15Z" stroke="#5DC4F5" strokeWidth="2"/>
+                    <path d="M18 22C19.657 22 21 20.657 21 19C21 17.343 19.657 16 18 16C16.343 16 15 17.343 15 19C15 20.657 16.343 22 18 22Z" stroke="#FFD93D" strokeWidth="2"/>
+                    <path d="M8.59 13.51L15.42 17.49" stroke="#9CB4C8" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M15.41 6.51L8.59 10.49" stroke="#9CB4C8" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                  Alertas en Telegram en tiempo real
+                </div>
+                <div className="pill-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="#E8F4F8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+              </li>
+              
+              <li className="pill">
+                <div className="pill-content">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="#5DC4F5" strokeWidth="2"/>
+                    <circle cx="12" cy="12" r="6" stroke="#2AABEE" strokeWidth="2"/>
+                    <circle cx="12" cy="12" r="2" fill="#FFD700"/>
+                  </svg>
+                  Selección de oportunidades con alta cuota
+                </div>
+                <div className="pill-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="#E8F4F8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+              </li>
+              
+              <li className="pill">
+                <div className="pill-content">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="9" cy="7" r="4" stroke="#FF6B6B" strokeWidth="2"/>
+                    <circle cx="17" cy="17" r="3" stroke="#5DC4F5" strokeWidth="2"/>
+                    <path d="M1 21C1 18.239 3.239 16 6 16H12C14.761 16 17 18.239 17 21" stroke="#2AABEE" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                  Comunidad activa y soporte directo
+                </div>
+                <div className="pill-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="#E8F4F8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+      
+      <footer>
+        <p className="disclaimer">
+          Este sitio no está afiliado a Telegram. "Telegram" y el logo son marcas de Telegram FZ-LLC.
+        </p>
+      </footer>
+    </>
   )
 }
 
