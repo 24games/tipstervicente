@@ -11,8 +11,7 @@ export default function App1Page() {
         backgroundRepeat: 'no-repeat'
       }}
     >
-      {/* Overlay escuro para melhor legibilidade */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      {/* Overlay removido - background com iluminação normal */}
       
       {/* Animações CSS */}
       <style jsx>{`
@@ -27,10 +26,13 @@ export default function App1Page() {
         
         @keyframes shimmer {
           0% {
-            transform: translateX(-100%) rotate(25deg);
+            transform: translateX(-150%) rotate(25deg);
+          }
+          50% {
+            transform: translateX(150%) rotate(25deg);
           }
           100% {
-            transform: translateX(200%) rotate(25deg);
+            transform: translateX(150%) rotate(25deg);
           }
         }
         
@@ -60,17 +62,16 @@ export default function App1Page() {
           content: '';
           position: absolute;
           top: -50%;
-          left: -50%;
-          width: 30%;
+          left: -100%;
+          width: 50%;
           height: 200%;
           background: linear-gradient(
             90deg,
             transparent,
-            rgba(255, 255, 255, 0.8),
+            rgba(255, 255, 255, 0.9),
             transparent
           );
-          animation: shimmer 2s ease-in-out infinite;
-          animation-delay: 0s;
+          animation: shimmer 3s ease-in-out infinite;
         }
       `}</style>
       
@@ -80,7 +81,7 @@ export default function App1Page() {
         {/* HEADLINE PRINCIPAL - Com espaço superior para a imagem do background */}
         <h1 
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-white drop-shadow-2xl px-4"
-          style={{ fontFamily: "'Grift', sans-serif", marginTop: '150px' }}
+          style={{ fontFamily: "'Grift', sans-serif", marginTop: '250px' }}
         >
           ¡Convierte $17.000 en $170.000 con{' '}
           <span className="gradient-animated">
