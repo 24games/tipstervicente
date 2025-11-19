@@ -27,13 +27,10 @@ export default function App1Page() {
         
         @keyframes shimmer {
           0% {
-            transform: translateX(-150%) rotate(25deg);
-          }
-          50% {
-            transform: translateX(150%) rotate(25deg);
+            transform: translateX(-100%);
           }
           100% {
-            transform: translateX(150%) rotate(25deg);
+            transform: translateX(300%);
           }
         }
         
@@ -62,17 +59,19 @@ export default function App1Page() {
         .button-shimmer::before {
           content: '';
           position: absolute;
-          top: -50%;
-          left: -100%;
-          width: 50%;
-          height: 200%;
+          top: 0;
+          left: 0;
+          width: 30%;
+          height: 100%;
           background: linear-gradient(
             90deg,
             transparent,
-            rgba(255, 255, 255, 0.9),
+            rgba(255, 255, 255, 0.8),
             transparent
           );
-          animation: shimmer 3s ease-in-out infinite;
+          transform: translateX(-100%);
+          animation: shimmer 2.5s ease-in-out infinite;
+          pointer-events: none;
         }
       `}</style>
       
@@ -104,7 +103,7 @@ export default function App1Page() {
         <div className="pt-4 md:pt-6">
           <a
             href="#download"
-            className="button-shimmer inline-flex items-center gap-3 bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:from-green-600 hover:via-green-700 hover:to-green-800 text-white text-xl sm:text-2xl md:text-3xl font-black py-5 px-10 md:py-6 md:px-14 rounded-2xl transition-all duration-300 hover:scale-105 shadow-2xl shadow-green-500/50 hover:shadow-green-600/70 uppercase tracking-wide"
+            className="button-shimmer inline-flex items-center gap-3 bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:from-green-600 hover:via-green-700 hover:to-green-800 text-white text-2xl sm:text-3xl md:text-4xl font-black py-5 px-10 md:py-6 md:px-14 rounded-2xl transition-all duration-300 hover:scale-105 shadow-2xl shadow-green-500/50 hover:shadow-green-600/70 uppercase tracking-wide"
             style={{ fontFamily: "'Teko', 'Black Ops One', sans-serif" }}
           >
             <svg 
