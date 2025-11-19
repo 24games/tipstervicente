@@ -22,17 +22,10 @@ export default function App1Layout({
       {/* Preconnect para fontes */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link rel="preconnect" href="https://fonts.cdnfonts.com" />
       
-      {/* Fonte Grift via CDN */}
+      {/* Fonte Black Ops One - Similar à Grift, funciona em todos dispositivos */}
       <link 
-        href="https://fonts.cdnfonts.com/css/grift" 
-        rel="stylesheet" 
-      />
-      
-      {/* Fallback: Inter como backup */}
-      <link 
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" 
+        href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Teko:wght@400;500;600;700&display=swap" 
         rel="stylesheet" 
       />
       

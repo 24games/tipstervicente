@@ -82,7 +82,7 @@ export default function App1Page() {
         {/* HEADLINE PRINCIPAL - Com espaço superior para a imagem do background */}
         <h1 
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-white drop-shadow-2xl px-4"
-          style={{ fontFamily: "'Grift', sans-serif", marginTop: '350px' }}
+          style={{ fontFamily: "'Teko', 'Black Ops One', sans-serif", marginTop: '350px' }}
         >
           ¡Convierte $17.000 en $170.000 con{' '}
           <span className="gradient-animated">
@@ -93,7 +93,7 @@ export default function App1Page() {
         {/* SUB HEADLINE */}
         <p 
           className="text-lg sm:text-xl md:text-2xl font-bold text-white leading-relaxed drop-shadow-lg px-4 mt-6"
-          style={{ fontFamily: "'Grift', sans-serif" }}
+          style={{ fontFamily: "'Teko', 'Black Ops One', sans-serif" }}
         >
           👇 Toca el botón de abajo y descarga la{' '}
           <span className="gradient-animated">app gratuita</span> con{' '}
@@ -105,7 +105,7 @@ export default function App1Page() {
           <a
             href="#download"
             className="button-shimmer inline-flex items-center gap-3 bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:from-green-600 hover:via-green-700 hover:to-green-800 text-white text-xl sm:text-2xl md:text-3xl font-black py-5 px-10 md:py-6 md:px-14 rounded-2xl transition-all duration-300 hover:scale-105 shadow-2xl shadow-green-500/50 hover:shadow-green-600/70 uppercase tracking-wide"
-            style={{ fontFamily: "'Grift', sans-serif" }}
+            style={{ fontFamily: "'Teko', 'Black Ops One', sans-serif" }}
           >
             <svg 
               className="w-7 h-7 md:w-8 md:h-8" 
@@ -128,7 +128,7 @@ export default function App1Page() {
         <div className="pt-4">
           <span 
             className="inline-block bg-yellow-400 text-black text-sm sm:text-base md:text-lg font-black px-6 py-2 rounded-full uppercase tracking-wider shadow-lg"
-            style={{ fontFamily: "'Grift', sans-serif" }}
+            style={{ fontFamily: "'Teko', 'Black Ops One', sans-serif" }}
           >
             🔥 100% Gratis
           </span>

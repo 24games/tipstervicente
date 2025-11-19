@@ -1,53 +1,18 @@
-/* Fonte Grift - Múltiplas fontes para garantir carregamento */
-
-/* Opção 1: CDN Fonts */
-@import url('https://fonts.cdnfonts.com/css/grift');
-
-/* Opção 2: Fallback com fontes similares */
-@font-face {
-  font-family: 'Grift';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Grift'),
-       local('Grift-Regular'),
-       local('Impact'),
-       local('Arial Black');
-}
-
-@font-face {
-  font-family: 'Grift';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local('Grift Bold'),
-       local('Grift-Bold'),
-       local('Impact'),
-       local('Arial Black');
-}
-
-@font-face {
-  font-family: 'Grift';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: local('Grift Black'),
-       local('Grift-Black'),
-       local('Impact'),
-       local('Arial Black');
-}
+/* Fontes confiáveis do Google Fonts - funcionam em TODOS os dispositivos */
 
 /* Garantindo que a fonte seja aplicada globalmente na página app1 */
 body {
-  font-family: 'Grift', 'Impact', 'Arial Black', sans-serif;
+  font-family: 'Teko', 'Black Ops One', 'Impact', 'Arial Black', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Grift', 'Impact', 'Arial Black', sans-serif;
+  font-family: 'Teko', 'Black Ops One', 'Impact', 'Arial Black', sans-serif;
+  font-weight: 700;
 }
 
 button, a {
-  font-family: 'Grift', 'Impact', 'Arial Black', sans-serif;
+  font-family: 'Teko', 'Black Ops One', 'Impact', 'Arial Black', sans-serif;
+  font-weight: 700;
 }
 
 /* Anti-aliasing para melhor renderização */
