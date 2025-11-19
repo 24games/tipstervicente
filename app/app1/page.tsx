@@ -82,7 +82,7 @@ export default function App1Page() {
           <img 
             src="/app1/images/todo o resto.png" 
             alt="App IA Casino"
-            className="w-48 sm:w-56 md:w-64 lg:w-80 h-auto mx-auto drop-shadow-2xl"
+            className="w-[85%] sm:w-[75%] md:w-[65%] lg:w-[600px] max-w-full h-auto mx-auto drop-shadow-2xl"
           />
         </div>
 
