@@ -11,7 +11,8 @@ export default function App1Page() {
         backgroundRepeat: 'no-repeat'
       }}
     >
-      {/* Overlay removido - background com iluminação normal */}
+      {/* Overlay leve para escurecer um pouco o background */}
+      <div className="absolute inset-0 bg-black/15"></div>
       
       {/* Animações CSS */}
       <style jsx>{`
@@ -81,7 +82,7 @@ export default function App1Page() {
         {/* HEADLINE PRINCIPAL - Com espaço superior para a imagem do background */}
         <h1 
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-white drop-shadow-2xl px-4"
-          style={{ fontFamily: "'Grift', sans-serif", marginTop: '370px' }}
+          style={{ fontFamily: "'Grift', sans-serif", marginTop: '350px' }}
         >
           ¡Convierte $17.000 en $170.000 con{' '}
           <span className="gradient-animated">
@@ -100,7 +101,7 @@ export default function App1Page() {
         </p>
 
         {/* BOTÃO CTA */}
-        <div className="pt-8 md:pt-12">
+        <div className="pt-4 md:pt-6">
           <a
             href="#download"
             className="button-shimmer inline-flex items-center gap-3 bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:from-green-600 hover:via-green-700 hover:to-green-800 text-white text-xl sm:text-2xl md:text-3xl font-black py-5 px-10 md:py-6 md:px-14 rounded-2xl transition-all duration-300 hover:scale-105 shadow-2xl shadow-green-500/50 hover:shadow-green-600/70 uppercase tracking-wide"
