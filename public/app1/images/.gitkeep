@@ -1,0 +1,63 @@
+# 📁 Pasta de Imagens - App1 (Casino IA)
+
+## 🚨 IMPORTANTE - Adicione estas imagens:
+
+### 1. Background da primeira dobra (OBRIGATÓRIO)
+**Nome do arquivo:** `background.jpg` ou `background.png`
+**Descrição:** Imagem de fundo da landing page
+**Recomendação:** 
+- Tamanho: 1920x1080px ou maior
+- Formato: JPG (menor tamanho) ou PNG
+- Qualidade: Alta resolução para telas grandes
+
+### 2. Imagem acima da headline (Você vai adicionar depois)
+**Sugestão de nome:** `logo.png` ou `app-screenshot.png`
+**Descrição:** Logo do app ou screenshot
+**Recomendação:**
+- Formato: PNG (com transparência)
+- Tamanho: 400-600px de largura
+- Fundo: Transparente (se possível)
+
+---
+
+## 📋 Lista de imagens necessárias:
+
+```
+public/app1/images/
+├── background.jpg        ← Fundo da página (OBRIGATÓRIO)
+├── logo.png             ← Logo ou imagem principal (opcional por enquanto)
+└── .gitkeep             ← Este arquivo
+```
+
+---
+
+## 💡 Como usar no código:
+
+```tsx
+// Background (já implementado automaticamente)
+backgroundImage: 'url(/app1/images/background.jpg)'
+
+// Logo ou imagem acima da headline
+<img src="/app1/images/logo.png" alt="Logo" />
+```
+
+---
+
+## ✅ Checklist:
+
+- [ ] Adicionar `background.jpg` nesta pasta
+- [ ] (Opcional) Adicionar logo/screenshot do app
+- [ ] Verificar se as imagens carregam em http://localhost:3000/app1
+
+---
+
+## 🎨 Formatos recomendados:
+- **JPG/JPEG** → Para fotos e backgrounds (menor tamanho)
+- **PNG** → Para logos com transparência
+- **WebP** → Melhor performance (se disponível)
+- **SVG** → Vetores e ícones
+
+---
+
+**Caminho para acessar:** `/app1/images/nome-da-imagem.extensao`
+
