@@ -107,9 +107,9 @@ export default function App1Page() {
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-white drop-shadow-2xl px-4"
           style={{ fontFamily: "'Teko', 'Black Ops One', sans-serif", marginTop: '350px' }}
         >
-          ¡Convierte $17.000 en $170.000 con{' '}
+          ¡Convierte $17.000 en $170.000 con el{' '}
           <span className="gradient-animated">
-            IA del casino!
+            app del casino!
           </span>
         </h1>
 
@@ -156,6 +156,151 @@ export default function App1Page() {
             <span className="fire-animated text-2xl sm:text-3xl">🔥</span>
             100% Gratis
           </span>
+        </div>
+
+      </div>
+    </div>
+
+    {/* DOBRA 2 - Sobre o Criador */}
+    <div 
+      className="min-h-screen relative flex items-center justify-center px-4 py-16 md:py-24"
+      style={{
+        background: 'linear-gradient(135deg, #064e3b 0%, #065f46 25%, #047857 50%, #059669 75%, #10b981 100%)',
+      }}
+    >
+      {/* Overlay sutil */}
+      <div className="absolute inset-0 bg-black/20"></div>
+
+      {/* Animações CSS para a dobra 2 */}
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slideInLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        .animate-fade-in-up {
+          animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-slide-in-left {
+          animation: slideInLeft 0.6s ease-out forwards;
+        }
+
+        .delay-100 { animation-delay: 0.1s; opacity: 0; }
+        .delay-200 { animation-delay: 0.2s; opacity: 0; }
+        .delay-300 { animation-delay: 0.3s; opacity: 0; }
+        .delay-400 { animation-delay: 0.4s; opacity: 0; }
+        .delay-500 { animation-delay: 0.5s; opacity: 0; }
+      `}</style>
+
+      {/* Conteúdo Dobra 2 */}
+      <div className="relative z-10 max-w-5xl w-full mx-auto text-center space-y-10 md:space-y-12">
+        
+        {/* Headline Dobra 2 */}
+        <h2 
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-white drop-shadow-2xl px-4 animate-fade-in-up"
+          style={{ fontFamily: "'Teko', 'Black Ops One', sans-serif" }}
+        >
+          El creador de la{' '}
+          <span className="gradient-animated">
+            IA #1 en Chile
+          </span>
+        </h2>
+
+        {/* Lista de Benefícios */}
+        <div className="space-y-6 md:space-y-8 px-4 max-w-4xl mx-auto">
+          
+          {/* Item 1 */}
+          <div className="flex items-start gap-4 text-left bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 shadow-2xl animate-slide-in-left delay-100">
+            <div className="flex-shrink-0 text-3xl md:text-4xl">✅</div>
+            <p 
+              className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-relaxed"
+              style={{ fontFamily: "'Teko', 'Black Ops One', sans-serif" }}
+            >
+              Responsable de ayudar a más de{' '}
+              <span className="gradient-animated">200 jugadores</span> todos los días a ganar en vivo.
+            </p>
+          </div>
+
+          {/* Item 2 */}
+          <div className="flex items-start gap-4 text-left bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 shadow-2xl animate-slide-in-left delay-200">
+            <div className="flex-shrink-0 text-3xl md:text-4xl">✅</div>
+            <p 
+              className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-relaxed"
+              style={{ fontFamily: "'Teko', 'Black Ops One', sans-serif" }}
+            >
+              Primer apostador de Chile en ganar{' '}
+              <span className="gradient-animated">CLP$500.000.000</span> en vivo junto a mis alumnos.
+            </p>
+          </div>
+
+          {/* Item 3 */}
+          <div className="flex items-start gap-4 text-left bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 shadow-2xl animate-slide-in-left delay-300">
+            <div className="flex-shrink-0 text-3xl md:text-4xl">✅</div>
+            <p 
+              className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-relaxed"
+              style={{ fontFamily: "'Teko', 'Black Ops One', sans-serif" }}
+            >
+              Más de{' '}
+              <span className="gradient-animated">3 años</span> aplicando estrategias que generan ingresos para{' '}
+              <span className="gradient-animated">miles de chilenos</span> a diario.
+            </p>
+          </div>
+
+          {/* Item 4 */}
+          <div className="flex items-start gap-4 text-left bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 shadow-2xl animate-slide-in-left delay-400">
+            <div className="flex-shrink-0 text-3xl md:text-4xl">✅</div>
+            <p 
+              className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-relaxed"
+              style={{ fontFamily: "'Teko', 'Black Ops One', sans-serif" }}
+            >
+              Mi{' '}
+              <span className="gradient-animated">inteligencia artificial</span> aplica todo mi análisis y entrega más de{' '}
+              <span className="gradient-animated">150 señales diarias</span> en mi app.
+            </p>
+          </div>
+
+        </div>
+
+        {/* CTA Repetido */}
+        <div className="pt-8 animate-fade-in-up delay-500">
+          <a
+            href="#download"
+            className="button-shimmer inline-flex items-center gap-3 bg-white hover:bg-gray-100 text-green-700 text-2xl sm:text-3xl md:text-4xl font-black py-5 px-10 md:py-6 md:px-14 rounded-2xl transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-white/30 uppercase tracking-wide"
+            style={{ fontFamily: "'Teko', 'Black Ops One', sans-serif" }}
+          >
+            <svg 
+              className="w-7 h-7 md:w-8 md:h-8" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={3} 
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" 
+              />
+            </svg>
+            Descargar Ahora
+          </a>
         </div>
 
       </div>
