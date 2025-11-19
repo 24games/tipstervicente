@@ -3,11 +3,11 @@
 export default function App1Page() {
   return (
     <div 
-      className="min-h-screen relative flex items-center justify-center px-4 py-12 md:py-20"
+      className="min-h-screen relative flex items-start justify-center px-4 py-12 md:py-20"
       style={{
-        backgroundImage: 'url(/app1/images/background-dobra-1.webp)',
+        backgroundImage: 'url(/app1/images/background-de-fato.jpg)',
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'top center',
         backgroundRepeat: 'no-repeat'
       }}
     >
@@ -77,19 +77,10 @@ export default function App1Page() {
       {/* Conteúdo */}
       <div className="relative z-10 max-w-4xl w-full mx-auto text-center space-y-6 md:space-y-8">
         
-        {/* Imagem acima da headline */}
-        <div className="mb-8 md:mb-12">
-          <img 
-            src="/app1/images/todo o resto.png" 
-            alt="App IA Casino"
-            className="w-[85%] sm:w-[75%] md:w-[65%] lg:w-[600px] max-w-full h-auto mx-auto drop-shadow-2xl"
-          />
-        </div>
-
-        {/* HEADLINE PRINCIPAL - Mais curta */}
+        {/* HEADLINE PRINCIPAL - Com espaço superior para a imagem do background */}
         <h1 
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-white drop-shadow-2xl px-4"
-          style={{ fontFamily: "'Grift', sans-serif" }}
+          style={{ fontFamily: "'Grift', sans-serif", marginTop: '150px' }}
         >
           ¡Convierte $17.000 en $170.000 con{' '}
           <span className="gradient-animated">
