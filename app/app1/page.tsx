@@ -80,8 +80,8 @@ export default function App1Page() {
         
         {/* HEADLINE PRINCIPAL - Com espaço superior para a imagem do background */}
         <h1 
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-white drop-shadow-2xl px-4"
-          style={{ fontFamily: "'Grift', sans-serif", marginTop: '400px' }}
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-white drop-shadow-2xl px-4"
+          style={{ fontFamily: "'Grift', sans-serif", marginTop: '370px' }}
         >
           ¡Convierte $17.000 en $170.000 con{' '}
           <span className="gradient-animated">
@@ -91,7 +91,7 @@ export default function App1Page() {
 
         {/* SUB HEADLINE */}
         <p 
-          className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-relaxed drop-shadow-lg px-4 mt-6"
+          className="text-lg sm:text-xl md:text-2xl font-bold text-white leading-relaxed drop-shadow-lg px-4 mt-6"
           style={{ fontFamily: "'Grift', sans-serif" }}
         >
           👇 Toca el botón de abajo y descarga la{' '}
