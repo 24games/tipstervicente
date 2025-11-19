@@ -2,6 +2,8 @@
 
 export default function App1Page() {
   return (
+    <>
+    {/* DOBRA 1 */}
     <div 
       className="min-h-screen relative flex items-start justify-center px-4 py-12 md:py-20"
       style={{
@@ -305,6 +307,7 @@ export default function App1Page() {
 
       </div>
     </div>
+    </>
   );
 }
 
