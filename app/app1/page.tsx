@@ -34,6 +34,30 @@ export default function App1Page() {
           }
         }
         
+        @keyframes fire-flicker {
+          0%, 100% {
+            transform: scale(1) rotate(-2deg);
+            filter: brightness(1) drop-shadow(0 0 8px rgba(255, 100, 0, 0.8));
+          }
+          25% {
+            transform: scale(1.1) rotate(2deg);
+            filter: brightness(1.3) drop-shadow(0 0 12px rgba(255, 150, 0, 1));
+          }
+          50% {
+            transform: scale(0.95) rotate(-1deg);
+            filter: brightness(0.9) drop-shadow(0 0 6px rgba(255, 80, 0, 0.7));
+          }
+          75% {
+            transform: scale(1.08) rotate(1deg);
+            filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 120, 0, 0.9));
+          }
+        }
+        
+        .fire-animated {
+          display: inline-block;
+          animation: fire-flicker 1.5s ease-in-out infinite;
+        }
+        
         .gradient-animated {
           background: linear-gradient(
             90deg,
@@ -126,10 +150,11 @@ export default function App1Page() {
         {/* Badge de Grátis */}
         <div className="pt-4">
           <span 
-            className="inline-block bg-yellow-400 text-black text-sm sm:text-base md:text-lg font-black px-6 py-2 rounded-full uppercase tracking-wider shadow-lg"
+            className="inline-flex items-center gap-2 text-white text-lg sm:text-xl md:text-2xl font-black uppercase tracking-wider drop-shadow-2xl"
             style={{ fontFamily: "'Teko', 'Black Ops One', sans-serif" }}
           >
-            🔥 100% Gratis
+            <span className="fire-animated text-2xl sm:text-3xl">🔥</span>
+            100% Gratis
           </span>
         </div>
 
