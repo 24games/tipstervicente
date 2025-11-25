@@ -1,0 +1,43 @@
+# 📁 Pasta de Imagens - /supercuota
+
+## 🖼️ Imagens Necessárias:
+
+### 1. Background do Hero (OBRIGATÓRIO)
+**Nome do arquivo:** `bg-expert.jpg`
+**Descrição:** Foto do expert (fundo da primeira dobra)
+**Recomendação:**
+- Tamanho: 1920x1080px ou maior
+- Formato: JPG ou PNG
+- O rosto deve estar no topo da imagem
+- Qualidade: Alta resolução
+
+### 2. Prints de Prova Social (Carrossel)
+**Nomes sugeridos:**
+- `print-1.jpg`
+- `print-2.jpg`
+- `print-3.jpg`
+- `print-4.jpg`
+- `print-5.jpg`
+
+**Descrição:** Screenshots de celular com provas de ganhos
+**Recomendação:**
+- Formato: JPG ou PNG
+- Proporção: 9:16 (formato celular)
+- Resolução mínima: 1080x1920px
+
+---
+
+## 📋 Checklist:
+
+- [ ] Adicionar `bg-expert.jpg` (background hero)
+- [ ] Adicionar prints do carrossel (mínimo 3, máximo quantos quiser)
+- [ ] Atualizar número de slides no código se necessário
+
+---
+
+## 💡 Como usar:
+
+1. Coloque as imagens nesta pasta (`public/supercuota/images/`)
+2. O background já está configurado: `/supercuota/images/bg-expert.jpg`
+3. Para os prints do carrossel, edite o código conforme instruções no README da rota
+
