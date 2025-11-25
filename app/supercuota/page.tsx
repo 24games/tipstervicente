@@ -106,8 +106,7 @@ export default function SupercuotaPage() {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        {/* Overlay escuro */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        {/* Overlay removido - background com cor normal */}
 
         {/* Conteúdo com margem superior para não cobrir o rosto */}
         <div className="relative z-10 max-w-5xl w-full mx-auto text-center mt-[300px] md:mt-[450px] space-y-8">
