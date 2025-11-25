@@ -232,17 +232,22 @@ export default function SupercuotaPage() {
             className="flex transition-transform duration-500 ease-in-out"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
-            {/* Slides - Placeholders para imagens */}
+            {/* Slides - Imagens dos depoimentos */}
             {[...Array(totalSlides)].map((_, index) => (
-              <div key={index} className="min-w-full flex items-center justify-center px-4">
-                <div className="w-full max-w-md h-[600px] bg-gray-800 rounded-3xl border-4 border-gray-700 flex items-center justify-center shadow-2xl">
-                  <p className="text-gray-500 text-xl font-bold">
-                    Print {index + 1}
-                    <br />
-                    <span className="text-sm text-gray-600">
-                      (Substituir imagem)
-                    </span>
-                  </p>
+              <div key={index} className="min-w-full flex items-center justify-center px-4 py-8">
+                <div className="relative w-full max-w-md">
+                  {/* Brilho verde atrás da imagem - usando múltiplas camadas para efeito mais intenso */}
+                  <div className="absolute -inset-4 bg-[#00FF88] rounded-3xl blur-3xl opacity-60 animate-pulse"></div>
+                  <div className="absolute -inset-2 bg-[#00FF88] rounded-3xl blur-2xl opacity-40"></div>
+                  
+                  {/* Container da imagem */}
+                  <div className="relative z-10">
+                    <img
+                      src={`/supercuota/images/depoimento ${index + 1}.jpeg`}
+                      alt={`Depoimento ${index + 1}`}
+                      className="w-full h-auto rounded-3xl object-cover shadow-2xl"
+                    />
+                  </div>
                 </div>
               </div>
             ))}
