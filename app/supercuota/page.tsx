@@ -100,7 +100,7 @@ export default function SupercuotaPage() {
       <section
         className="relative min-h-screen flex items-start justify-center px-4 py-12"
         style={{
-          backgroundImage: 'url(/supercuota/images/BACKGROUND DOBRA 1 copiar.webp)',
+          backgroundImage: 'url(/supercuota/images/BACKGROUND%20DOBRA%201%20copiar.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'top center',
           backgroundRepeat: 'no-repeat',
