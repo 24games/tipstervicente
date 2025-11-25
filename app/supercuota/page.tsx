@@ -91,14 +91,26 @@ export default function SupercuotaPage() {
           animation: fire-pulse 1.5s ease-in-out infinite;
         }
 
-        body {
+        /* Prevenir scroll horizontal no mobile */
+        html, body {
+          overflow-x: hidden;
+          max-width: 100vw;
+          position: relative;
+        }
+
+        * {
+          max-width: 100%;
+        }
+
+        section {
+          max-width: 100vw;
           overflow-x: hidden;
         }
       `}</style>
 
       {/* HERO SECTION - Primeira Dobra */}
       <section
-        className="relative min-h-screen flex items-start justify-center px-4 py-12"
+        className="relative min-h-screen flex items-start justify-center px-4 py-12 w-full overflow-x-hidden"
         style={{
           backgroundImage: 'url(/supercuota/images/BACKGROUND%20DOBRA%201%20copiar.webp)',
           backgroundSize: 'cover',
@@ -179,7 +191,7 @@ export default function SupercuotaPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 1, ease: "easeInOut" }}
-        className="relative min-h-screen flex flex-col items-center justify-center px-4 py-20 bg-gradient-to-br from-black via-purple-950/40 to-black"
+        className="relative min-h-screen flex flex-col items-center justify-center px-4 py-20 bg-gradient-to-br from-black via-purple-950/40 to-black w-full overflow-x-hidden"
       >
         {/* Glows ambientes - Animados */}
         <motion.div 
@@ -260,7 +272,7 @@ export default function SupercuotaPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="bg-black py-8 border-t border-gray-900"
+        className="bg-black py-8 border-t border-gray-900 w-full overflow-x-hidden"
       >
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-sm text-gray-600">
