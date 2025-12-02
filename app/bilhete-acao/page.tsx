@@ -119,7 +119,7 @@ export default function BilheteAcaoPage() {
       `}</style>
 
       {/* HEADER - Disclaimer com cronômetro */}
-      <header className="bg-white w-full py-2 px-4 md:px-8 border-b border-gray-200">
+      <header className="bg-[#00FF88] w-full py-2 px-4 md:px-8 border-b border-gray-200">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           {/* Esquerda - Cronômetro */}
           <div className="flex items-center gap-2">
@@ -139,7 +139,7 @@ export default function BilheteAcaoPage() {
             <p className="text-black text-xs md:text-sm font-semibold">
               98% de los cupos agotados
             </p>
-            <div className="bg-blue-500 rounded-lg px-3 py-1">
+            <div className="bg-blue-600 rounded-lg px-3 py-1">
               <p className="text-white text-xs md:text-sm font-bold">
                 SOLO 3 DISPONIBLES
               </p>
@@ -161,7 +161,7 @@ export default function BilheteAcaoPage() {
         {/* Overlay escuro para contraste */}
         <div className="absolute inset-0 bg-black/40"></div>
 
-        <div className="relative z-10 max-w-5xl w-full mx-auto text-center space-y-8">
+        <div className="relative z-10 max-w-5xl w-full mx-auto text-center space-y-4 sm:space-y-6 md:space-y-8">
           {/* Imagem do Expert */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -182,7 +182,7 @@ export default function BilheteAcaoPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight px-4 text-white"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight px-4 text-white"
           >
             ÚNETE AL{' '}
             <span className="gradient-text-animated">
@@ -196,7 +196,7 @@ export default function BilheteAcaoPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg sm:text-xl md:text-2xl text-gray-200 leading-relaxed px-4 max-w-4xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed px-4 max-w-4xl mx-auto"
           >
             Recibe todas las <span className="font-bold">oportunidades únicas</span> de supercuotas, para buscar un{' '}
             <span className="font-bold">retorno alto</span>, colocando solo el{' '}
