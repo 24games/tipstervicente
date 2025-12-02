@@ -152,7 +152,7 @@ export default function BilheteAcaoPage() {
       <section
         className="relative min-h-screen flex flex-col items-center justify-center px-4 py-12 w-full overflow-x-hidden"
         style={{
-          backgroundImage: 'url(/bilhete-acao/images/background-hero.jpg)',
+          backgroundImage: 'url(/bilhete-acao/images/background-hero.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
@@ -170,7 +170,7 @@ export default function BilheteAcaoPage() {
             className="mb-8"
           >
             <img
-              src="/bilhete-acao/images/expert.jpg"
+              src="/bilhete-acao/images/expert.webp"
               alt="Expert"
               className="w-48 md:w-64 lg:w-80 h-auto mx-auto rounded-full object-cover shadow-2xl border-4 border-white"
             />
@@ -255,7 +255,7 @@ export default function BilheteAcaoPage() {
                   {/* Imagem */}
                   <div className="relative z-10">
                     <img
-                      src={`/bilhete-acao/images/depoimento-${index + 1}.jpg`}
+                      src={`/bilhete-acao/images/depoimento-${index + 1}.webp`}
                       alt={`Depoimento ${index + 1}`}
                       className="w-full h-auto rounded-3xl object-cover shadow-2xl"
                     />
