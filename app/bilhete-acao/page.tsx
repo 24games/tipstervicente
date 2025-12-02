@@ -172,7 +172,8 @@ export default function BilheteAcaoPage() {
             <img
               src="/bilhete-acao/images/expert.webp"
               alt="Expert"
-              className="w-48 md:w-64 lg:w-80 h-auto mx-auto rounded-full object-cover shadow-2xl border-4 border-white"
+              className="mx-auto"
+              style={{ maxWidth: '100%', height: 'auto' }}
             />
           </motion.div>
 
