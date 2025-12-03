@@ -7,7 +7,7 @@ export default function App1Page() {
     <div 
       className="min-h-screen relative flex items-start justify-center px-4 py-12 md:py-20"
       style={{
-        backgroundImage: 'url(/app1/images/background-de-fato.jpg)',
+        backgroundImage: 'url(/app1/images/background-dobra-1-novo.webp)',
         backgroundSize: 'cover',
         backgroundPosition: 'top center',
         backgroundRepeat: 'no-repeat'
