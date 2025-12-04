@@ -12,7 +12,12 @@ export default function BilheteAcaoPage() {
   useEffect(() => {
     if (timeLeft > 0) {
       const timer = setInterval(() => {
-        setTimeLeft((prev) => prev - 1);
+        setTimeLeft((prev) => {
+          if (prev <= 1) {
+            return 0; // Para em 00:00
+          }
+          return prev - 1;
+        });
       }, 1000);
       return () => clearInterval(timer);
     }
@@ -53,11 +58,11 @@ export default function BilheteAcaoPage() {
         @keyframes pulse-glow {
           0%, 100% {
             transform: scale(1);
-            box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+            box-shadow: 0 0 20px rgba(123, 210, 4, 0.5);
           }
           50% {
             transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(34, 197, 94, 0.8);
+            box-shadow: 0 0 40px rgba(123, 210, 4, 0.8);
           }
         }
 
@@ -73,9 +78,9 @@ export default function BilheteAcaoPage() {
         .gradient-text-animated {
           background: linear-gradient(
             90deg,
-            #22c55e 0%,
-            #16a34a 50%,
-            #22c55e 100%
+            #7BD204 0%,
+            #7BD204 50%,
+            #7BD204 100%
           );
           background-size: 200% auto;
           -webkit-background-clip: text;
@@ -119,22 +124,32 @@ export default function BilheteAcaoPage() {
       `}</style>
 
       {/* HEADER - Disclaimer com cronômetro */}
-      <header className="bg-[#22c55e] w-full py-2 px-4 md:px-8 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-          {/* Esquerda - Cronômetro */}
+      <header className="bg-[#7BD204] w-full py-2 px-4 md:px-8 border-b border-gray-200 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto flex items-center justify-center md:justify-between gap-4">
+          {/* Bloco Cronômetro - Esquerda */}
           <div className="flex items-center gap-2">
-            <div className="flex items-center gap-1">
-              <div className="bg-blue-200 rounded px-2 py-1 text-blue-800 font-bold text-sm md:text-base">
+            {/* Card Minutos */}
+            <div className="bg-[#0055FF] rounded-lg p-2 flex flex-col items-center justify-center w-14 h-14 md:w-16 md:h-16">
+              <span className="text-white font-black text-xl md:text-2xl leading-none">
                 {String(minutes).padStart(2, '0')}
-              </div>
-              <span className="text-gray-400 mx-1">:</span>
-              <div className="bg-blue-200 rounded px-2 py-1 text-blue-800 font-bold text-sm md:text-base">
+              </span>
+              <span className="text-white text-[8px] md:text-[10px] font-bold uppercase mt-0.5">
+                MINUTOS
+              </span>
+            </div>
+            
+            {/* Card Segundos */}
+            <div className="bg-[#0055FF] rounded-lg p-2 flex flex-col items-center justify-center w-14 h-14 md:w-16 md:h-16">
+              <span className="text-white font-black text-xl md:text-2xl leading-none">
                 {String(seconds).padStart(2, '0')}
-              </div>
+              </span>
+              <span className="text-white text-[8px] md:text-[10px] font-bold uppercase mt-0.5">
+                SEGUNDOS
+              </span>
             </div>
           </div>
 
-          {/* Direita - Cupos */}
+          {/* Bloco Texto - Direita */}
           <div className="flex flex-col items-end gap-1">
             <p className="text-black text-xs md:text-sm font-semibold">
               98% de los cupos agotados
@@ -150,7 +165,7 @@ export default function BilheteAcaoPage() {
 
       {/* HERO SECTION */}
       <section
-        className="relative min-h-screen flex flex-col items-center justify-center px-4 py-12 w-full overflow-x-hidden"
+        className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-4 pb-12 w-full overflow-x-hidden"
         style={{
           backgroundImage: 'url(/bilhete-acao/images/background-hero.webp)',
           backgroundSize: 'cover',
@@ -167,7 +182,7 @@ export default function BilheteAcaoPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-8"
+            className="mb-8 -mt-4"
           >
             <img
               src="/bilhete-acao/images/expert.webp"
@@ -211,7 +226,7 @@ export default function BilheteAcaoPage() {
           >
             <a
               href="https://wa.me/seu-numero"
-              className="btn-pulse inline-flex items-center justify-center gap-3 bg-[#22c55e] hover:bg-[#16a34a] text-black text-xl sm:text-2xl md:text-3xl font-black py-4 px-8 sm:py-5 sm:px-12 md:py-6 md:px-16 rounded-2xl transition-all duration-300 uppercase tracking-wide"
+              className="btn-pulse inline-flex items-center justify-center gap-3 bg-[#7BD204] hover:bg-[#7BD204] text-black text-xl sm:text-2xl md:text-3xl font-black py-4 px-8 sm:py-5 sm:px-12 md:py-6 md:px-16 rounded-2xl transition-all duration-300 uppercase tracking-wide"
             >
               ENTRA AHORA!
             </a>
@@ -277,7 +292,7 @@ export default function BilheteAcaoPage() {
         >
           <a
             href="https://wa.me/seu-numero"
-            className="btn-pulse inline-flex items-center justify-center gap-3 bg-[#00FF88] hover:bg-[#00dd77] text-black text-xl sm:text-2xl md:text-3xl font-black py-4 px-8 sm:py-5 sm:px-12 md:py-6 md:px-16 rounded-2xl transition-all duration-300 uppercase tracking-wide"
+            className="btn-pulse inline-flex items-center justify-center gap-3 bg-[#7BD204] hover:bg-[#7BD204] text-black text-xl sm:text-2xl md:text-3xl font-black py-4 px-8 sm:py-5 sm:px-12 md:py-6 md:px-16 rounded-2xl transition-all duration-300 uppercase tracking-wide"
           >
             ENTRA AHORA!
           </a>
