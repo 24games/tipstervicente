@@ -53,11 +53,11 @@ export default function BilheteAcaoPage() {
         @keyframes pulse-glow {
           0%, 100% {
             transform: scale(1);
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
           }
           50% {
             transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(0, 255, 136, 0.8);
+            box-shadow: 0 0 40px rgba(34, 197, 94, 0.8);
           }
         }
 
@@ -73,9 +73,9 @@ export default function BilheteAcaoPage() {
         .gradient-text-animated {
           background: linear-gradient(
             90deg,
-            #00FF88 0%,
-            #00dd77 50%,
-            #00FF88 100%
+            #22c55e 0%,
+            #16a34a 50%,
+            #22c55e 100%
           );
           background-size: 200% auto;
           -webkit-background-clip: text;
@@ -119,7 +119,7 @@ export default function BilheteAcaoPage() {
       `}</style>
 
       {/* HEADER - Disclaimer com cronômetro */}
-      <header className="bg-[#00FF88] w-full py-2 px-4 md:px-8 border-b border-gray-200">
+      <header className="bg-[#22c55e] w-full py-2 px-4 md:px-8 border-b border-gray-200">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           {/* Esquerda - Cronômetro */}
           <div className="flex items-center gap-2">
@@ -182,13 +182,13 @@ export default function BilheteAcaoPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight px-4 text-white"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black leading-tight px-4 text-white"
           >
             ÚNETE AL{' '}
             <span className="gradient-text-animated">
-              GRUPO DE SUPERCUOTAS
+              GRUPO DE CUOTAS ALTAS
             </span>{' '}
-            QUE MÁS ACIERTA EN CHILE
+            QUE MÁS ACIERTA EN CHILE!
           </motion.h1>
 
           {/* Sub headline */}
@@ -196,11 +196,10 @@ export default function BilheteAcaoPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed px-4 max-w-4xl mx-auto"
+            className="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed px-4 max-w-4xl mx-auto"
           >
-            Recibe todas las <span className="font-bold">oportunidades únicas</span> de supercuotas, para buscar un{' '}
-            <span className="font-bold">retorno alto</span>, colocando solo el{' '}
-            <span className="font-bold">vuelto del pan</span>
+            Recibe tips diarias para buscar un retorno{' '}
+            <span className="gradient-text-animated font-bold">ALTO</span>, poniendo solo el vuelto del pan
           </motion.p>
 
           {/* Botão CTA com pulso e brilho */}
@@ -212,7 +211,7 @@ export default function BilheteAcaoPage() {
           >
             <a
               href="https://wa.me/seu-numero"
-              className="btn-pulse inline-flex items-center justify-center gap-3 bg-[#00FF88] hover:bg-[#00dd77] text-black text-xl sm:text-2xl md:text-3xl font-black py-4 px-8 sm:py-5 sm:px-12 md:py-6 md:px-16 rounded-2xl transition-all duration-300 uppercase tracking-wide"
+              className="btn-pulse inline-flex items-center justify-center gap-3 bg-[#22c55e] hover:bg-[#16a34a] text-black text-xl sm:text-2xl md:text-3xl font-black py-4 px-8 sm:py-5 sm:px-12 md:py-6 md:px-16 rounded-2xl transition-all duration-300 uppercase tracking-wide"
             >
               ENTRA AHORA!
             </a>
@@ -221,17 +220,22 @@ export default function BilheteAcaoPage() {
       </section>
 
       {/* SEÇÃO DE DEPOIMENTOS */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-black w-full overflow-x-hidden">
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-20 bg-gradient-to-br from-blue-600 via-blue-700 via-indigo-800 to-blue-900 w-full overflow-x-hidden">
         {/* Título */}
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white text-center mb-16 px-4"
+          className="text-center mb-8 px-4"
         >
-          MIRA LO QUE ELLOS TIENEN QUE DECIR:
-        </motion.h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4">
+            MIRA LO QUE ELLOS TIENEN QUE DECIR:
+          </h2>
+          <p className="text-lg sm:text-xl md:text-2xl text-blue-200 font-semibold max-w-3xl mx-auto">
+            Miles de chilenos ya están ganando con nuestros tips de cuotas altas
+          </p>
+        </motion.div>
 
         {/* Carrossel de Prints */}
         <motion.div
@@ -249,10 +253,6 @@ export default function BilheteAcaoPage() {
             {[...Array(totalSlides)].map((_, index) => (
               <div key={index} className="min-w-full flex items-center justify-center px-4 py-8">
                 <div className="relative w-full max-w-md">
-                  {/* Traçado verde degradê ao redor */}
-                  <div className="absolute -inset-2 bg-gradient-to-r from-[#00FF88] via-[#00dd77] to-[#00FF88] rounded-3xl blur-sm opacity-80"></div>
-                  <div className="absolute -inset-1 bg-gradient-to-r from-[#00FF88] via-[#00dd77] to-[#00FF88] rounded-3xl"></div>
-                  
                   {/* Imagem */}
                   <div className="relative z-10">
                     <img
