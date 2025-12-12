@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import './bilhete-acao.css';
 
 export default function BilheteAcaoPage() {
   const [timeLeft, setTimeLeft] = useState(300); // 5 minutos em segundos
@@ -36,92 +37,6 @@ export default function BilheteAcaoPage() {
 
   return (
     <>
-      {/* Animações CSS globais */}
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Montserrat:wght@400;600;700;800;900&display=swap');
-
-        * {
-          font-family: 'Poppins', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-        }
-
-        @keyframes gradient-flow {
-          0%, 100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-        }
-
-        @keyframes pulse-glow {
-          0%, 100% {
-            transform: scale(1);
-            box-shadow: 0 0 20px rgba(123, 210, 4, 0.5);
-          }
-          50% {
-            transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(123, 210, 4, 0.8);
-          }
-        }
-
-        @keyframes shine {
-          0% {
-            transform: translateX(-100%) translateY(-100%) rotate(30deg);
-          }
-          100% {
-            transform: translateX(200%) translateY(200%) rotate(30deg);
-          }
-        }
-
-        .gradient-text-animated {
-          background: linear-gradient(
-            90deg,
-            #7BD204 0%,
-            #7BD204 50%,
-            #7BD204 100%
-          );
-          background-size: 200% auto;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          animation: gradient-flow 3s linear infinite;
-        }
-
-        .btn-pulse {
-          position: relative;
-          overflow: hidden;
-          animation: pulse-glow 2s ease-in-out infinite;
-        }
-
-        .btn-pulse::before {
-          content: '';
-          position: absolute;
-          top: -50%;
-          left: -50%;
-          width: 50%;
-          height: 200%;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.8),
-            transparent
-          );
-          animation: shine 3s ease-in-out infinite;
-          pointer-events: none;
-        }
-
-        /* Prevenir scroll horizontal */
-        html, body {
-          overflow-x: hidden;
-          max-width: 100vw;
-        }
-
-        * {
-          max-width: 100%;
-        }
-      `}</style>
 
       {/* HEADER - Disclaimer com cronômetro */}
       <header className="bg-[#7BD204] w-full py-2 px-4 md:px-8 border-b border-gray-200 sticky top-0 z-50">
@@ -217,19 +132,51 @@ export default function BilheteAcaoPage() {
             <span className="gradient-text-animated font-bold">ALTO</span>, poniendo solo el vuelto del pan
           </motion.p>
 
-          {/* Botão CTA com pulso e brilho */}
+          {/* Botão CTA com ícone Telegram */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="pt-6 flex justify-center w-full"
+            className="pt-6 flex flex-col items-center justify-center w-full gap-2"
           >
             <a
-              href="https://wa.me/seu-numero"
-              className="btn-pulse inline-flex items-center justify-center gap-3 bg-[#7BD204] hover:bg-[#7BD204] text-black text-xl sm:text-2xl md:text-3xl font-black py-4 px-8 sm:py-5 sm:px-12 md:py-6 md:px-16 rounded-2xl transition-all duration-300 uppercase tracking-wide"
+              href="https://t.me/seu-grupo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 bg-[#0088cc] hover:bg-[#0077b5] text-white text-base sm:text-lg font-semibold py-3 px-6 sm:py-3.5 sm:px-8 rounded-lg transition-colors duration-200"
             >
-              ENTRA AHORA!
+              {/* Ícone Telegram - Círculo branco com avião */}
+              <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full flex-shrink-0">
+                <svg 
+                  width="18" 
+                  height="18" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="text-[#0088cc]"
+                >
+                  <path 
+                    d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+              <span>ENTRAR AL GRUPO AHORA</span>
             </a>
+            <p className="text-xs sm:text-sm text-gray-400 text-center">
+              ¿No tienes Telegram?{' '}
+              <a 
+                href="https://telegram.org/apps" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="underline hover:text-gray-300 transition-colors"
+              >
+                Haz clic aquí.
+              </a>
+            </p>
           </motion.div>
         </div>
       </section>
@@ -288,14 +235,46 @@ export default function BilheteAcaoPage() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="pt-6 flex justify-center w-full mb-8"
+          className="pt-6 flex flex-col items-center justify-center w-full mb-8 gap-2"
         >
           <a
-            href="https://wa.me/seu-numero"
-            className="btn-pulse inline-flex items-center justify-center gap-3 bg-[#7BD204] hover:bg-[#7BD204] text-black text-xl sm:text-2xl md:text-3xl font-black py-4 px-8 sm:py-5 sm:px-12 md:py-6 md:px-16 rounded-2xl transition-all duration-300 uppercase tracking-wide"
+            href="https://t.me/seu-grupo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-3 bg-[#0088cc] hover:bg-[#0077b5] text-white text-base sm:text-lg font-semibold py-3 px-6 sm:py-3.5 sm:px-8 rounded-lg transition-colors duration-200"
           >
-            ENTRA AHORA!
+            {/* Ícone Telegram - Círculo branco com avião */}
+            <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full flex-shrink-0">
+              <svg 
+                width="18" 
+                height="18" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                className="text-[#0088cc]"
+              >
+                <path 
+                  d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <span>ENTRAR AL GRUPO AHORA</span>
           </a>
+          <p className="text-xs sm:text-sm text-gray-300 text-center">
+            ¿No tienes Telegram?{' '}
+            <a 
+              href="https://telegram.org/apps" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="underline hover:text-gray-200 transition-colors"
+            >
+              Haz clic aquí.
+            </a>
+          </p>
         </motion.div>
       </section>
 
