@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
+// import MetaPixel from '@/components/tracking/MetaPixel' // TEMPORARIAMENTE DESABILITADO
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -41,6 +42,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
+        
+        {/* Meta Pixel - TEMPORARIAMENTE DESABILITADO */}
+        {/* <MetaPixel /> */}
         
         {children}
       </body>
