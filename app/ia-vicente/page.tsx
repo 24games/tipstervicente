@@ -7,20 +7,20 @@ const TELEGRAM_LINK = 'https://t.me/seu-grupo';
 
 export default function IAVicentePage() {
   const benefits = [
-    'Señales y operaciones en vivo durante las lives, con total precisión en cada jugada.',
-    'La IA El Papslots detecta patrones y oportunidades basadas en datos reales.',
-    'Estrategias seguras de entrada y salida para maximizar ganancias y proteger el saldo.',
-    'Mentalidad ganadora para mantener el enfoque, el control y la constancia en los resultados.',
-    'Acceso directo conmigo para resolver dudas y seguir las jugadas más rentables.',
+    { text: 'Señales y operaciones en vivo durante las lives, con total precisión en cada jugada.', highlights: ['Señales y operaciones en vivo', 'total precisión'] },
+    { text: 'La IA El Papslots detecta patrones y oportunidades basadas en datos reales.', highlights: ['IA El Papslots', 'patrones y oportunidades', 'datos reales'] },
+    { text: 'Estrategias seguras de entrada y salida para maximizar ganancias y proteger el saldo.', highlights: ['Estrategias seguras', 'maximizar ganancias', 'proteger el saldo'] },
+    { text: 'Mentalidad ganadora para mantener el enfoque, el control y la constancia en los resultados.', highlights: ['Mentalidad ganadora', 'enfoque', 'control', 'constancia'] },
+    { text: 'Acceso directo conmigo para resolver dudas y seguir las jugadas más rentables.', highlights: ['Acceso directo', 'jugadas más rentables'] },
   ];
 
   return (
     <>
       <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Montserrat:wght@400;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap');
         
         * {
-          font-family: 'Poppins', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
@@ -59,8 +59,6 @@ export default function IAVicentePage() {
           }}
         />
 
-        {/* Overlay Gradiente - Transparente no topo, Preto na base */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-transparent" />
 
         {/* Conteúdo - Ancorado na parte inferior */}
         <div className="relative z-10 px-5 pb-10 pt-20 w-full">
@@ -100,28 +98,38 @@ export default function IAVicentePage() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="space-y-4"
             >
-              {benefits.map((benefit, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-                  className="flex items-start gap-3"
-                >
-                  {/* Ícone Check Verde Neon */}
-                  <div className="flex-shrink-0 mt-0.5">
-                    <CheckCircle
-                      className="w-6 h-6 text-[#00C853]"
-                      strokeWidth={2.5}
+              {benefits.map((benefit, index) => {
+                let text = benefit.text;
+                benefit.highlights.forEach((highlight) => {
+                  text = text.replace(
+                    new RegExp(`(${highlight})`, 'gi'),
+                    '<strong>$1</strong>'
+                  );
+                });
+                return (
+                  <motion.li
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+                    className="flex items-start gap-3"
+                  >
+                    {/* Ícone Check Verde Neon */}
+                    <div className="flex-shrink-0 mt-0.5">
+                      <CheckCircle
+                        className="w-6 h-6 text-[#00C853]"
+                        strokeWidth={2.5}
+                      />
+                    </div>
+                    
+                    {/* Texto do Benefício */}
+                    <p 
+                      className="text-white text-sm sm:text-base leading-relaxed flex-1"
+                      dangerouslySetInnerHTML={{ __html: text }}
                     />
-                  </div>
-                  
-                  {/* Texto do Benefício */}
-                  <p className="text-white text-sm sm:text-base leading-relaxed flex-1">
-                    {benefit}
-                  </p>
-                </motion.li>
-              ))}
+                  </motion.li>
+                );
+              })}
             </motion.ul>
           </motion.div>
         </div>
