@@ -1,18 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CheckCircle } from 'lucide-react';
+import { Send } from 'lucide-react';
 
 const TELEGRAM_LINK = 'https://t.me/seu-grupo';
-
-export default function IAVicentePage() {
-  const benefits = [
-    { text: 'Señales y operaciones en vivo durante las lives, con total precisión en cada jugada.', highlights: ['Señales y operaciones en vivo', 'total precisión'] },
-    { text: 'La IA El Papslots detecta patrones y oportunidades basadas en datos reales.', highlights: ['IA El Papslots', 'patrones y oportunidades', 'datos reales'] },
-    { text: 'Estrategias seguras de entrada y salida para maximizar ganancias y proteger el saldo.', highlights: ['Estrategias seguras', 'maximizar ganancias', 'proteger el saldo'] },
-    { text: 'Mentalidad ganadora para mantener el enfoque, el control y la constancia en los resultados.', highlights: ['Mentalidad ganadora', 'enfoque', 'control', 'constancia'] },
-    { text: 'Acceso directo conmigo para resolver dudas y seguir las jugadas más rentables.', highlights: ['Acceso directo', 'jugadas más rentables'] },
-  ];
 
   return (
     <>
@@ -27,10 +18,10 @@ export default function IAVicentePage() {
 
         @keyframes glow-pulse {
           0%, 100% {
-            box-shadow: 0 0 20px rgba(0, 200, 83, 0.5), 0 0 40px rgba(0, 200, 83, 0.3);
+            box-shadow: 0 0 20px rgba(36, 161, 222, 0.5), 0 0 40px rgba(36, 161, 222, 0.3);
           }
           50% {
-            box-shadow: 0 0 30px rgba(0, 200, 83, 0.8), 0 0 60px rgba(0, 200, 83, 0.5);
+            box-shadow: 0 0 30px rgba(36, 161, 222, 0.8), 0 0 60px rgba(36, 161, 222, 0.5);
           }
         }
 
@@ -60,6 +51,9 @@ export default function IAVicentePage() {
         />
 
 
+        {/* Overlay Gradiente - Transparente no topo, Preto na base */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-transparent" />
+
         {/* Conteúdo - Ancorado na parte inferior */}
         <div className="relative z-10 px-5 pb-10 pt-20 w-full">
           <motion.div
@@ -68,69 +62,47 @@ export default function IAVicentePage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6"
           >
-            {/* Botão CTA - Destaque Principal */}
-            <motion.a
-              href={TELEGRAM_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-glow block w-full bg-[#00C853] hover:bg-[#00B248] text-white font-black text-lg sm:text-xl py-4 px-6 rounded-full transition-all duration-300 text-center uppercase tracking-wide"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              ENTRAR AL GRUPO
-            </motion.a>
-
             {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-white text-xl sm:text-2xl font-semibold leading-tight"
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-white text-3xl sm:text-4xl md:text-5xl font-black leading-tight"
             >
-              Lo que obtienes al unirte a nuestro{' '}
-              <span className="text-[#00C853] font-black">Telegram</span>
+              ¡Deja que mi{' '}
+              <span className="text-[#00C853]">IA</span>
+              {' '}trabaje por ti!
             </motion.h1>
 
-            {/* Lista de Benefícios */}
-            <motion.ul
+            {/* Subheadline */}
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="space-y-4"
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="text-white text-base sm:text-lg md:text-xl leading-relaxed"
             >
-              {benefits.map((benefit, index) => {
-                let text = benefit.text;
-                benefit.highlights.forEach((highlight) => {
-                  text = text.replace(
-                    new RegExp(`(${highlight})`, 'gi'),
-                    '<strong>$1</strong>'
-                  );
-                });
-                return (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-                    className="flex items-start gap-3"
-                  >
-                    {/* Ícone Check Verde Neon */}
-                    <div className="flex-shrink-0 mt-0.5">
-                      <CheckCircle
-                        className="w-6 h-6 text-[#00C853]"
-                        strokeWidth={2.5}
-                      />
-                    </div>
-                    
-                    {/* Texto do Benefício */}
-                    <p 
-                      className="text-white text-sm sm:text-base leading-relaxed flex-1"
-                      dangerouslySetInnerHTML={{ __html: text }}
-                    />
-                  </motion.li>
-                );
-              })}
-            </motion.ul>
+              Entra a mi grupo y aprovecha señales con un{' '}
+              <span className="font-bold text-[#00C853]">90% de efectividad</span>
+              , las{' '}
+              <span className="font-bold text-[#00C853]">24 horas del día</span>
+              {' '}🤖
+            </motion.p>
+
+            {/* Botão CTA - Telegram */}
+            <motion.a
+              href={TELEGRAM_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-glow flex items-center justify-center gap-3 w-full bg-[#24A1DE] hover:bg-[#1E8FC7] text-white font-black text-lg sm:text-xl py-4 px-6 rounded-full transition-all duration-300 uppercase tracking-wide shadow-lg shadow-blue-500/50"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+            >
+              <Send className="w-5 h-5" strokeWidth={2.5} />
+              ENTRAR AL GRUPO
+            </motion.a>
           </motion.div>
         </div>
       </div>
