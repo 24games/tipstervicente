@@ -56,23 +56,25 @@ export default function IAVicentePage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-transparent" />
 
         {/* Conteúdo - Ancorado na parte inferior */}
-        <div className="relative z-10 px-5 pb-10 pt-20 w-full">
+        <div className="relative z-10 px-5 pb-10 pt-20 w-full" style={{ marginBottom: '-100px' }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-6 text-center"
           >
             {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-white text-3xl sm:text-4xl md:text-5xl font-black leading-tight"
+              className="text-white text-3xl sm:text-4xl md:text-5xl font-black leading-tight uppercase"
             >
-              ¡Deja que mi{' '}
+              ¡DEJA QUE MI{' '}
               <span className="text-[#00C853]">IA</span>
-              {' '}trabaje por ti!
+              {' '}
+              <span className="bg-[#00C853] text-black px-2 py-1 rounded">TRABAJE POR TI</span>
+              !
             </motion.h1>
 
             {/* Subheadline */}
@@ -80,7 +82,7 @@ export default function IAVicentePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-white text-base sm:text-lg md:text-xl leading-relaxed"
+              className="text-white text-base sm:text-lg md:text-xl leading-relaxed text-center"
             >
               Entra a mi grupo y aprovecha señales con un{' '}
               <span className="font-bold text-[#00C853]">90% de efectividad</span>
