@@ -41,7 +41,7 @@ export default function IAVicentePage() {
       `}</style>
 
       {/* Container Principal - Fullscreen estilo Stories */}
-      <div className="relative min-h-screen w-full flex flex-col justify-end overflow-hidden">
+      <div className="relative min-h-screen w-full overflow-hidden">
         {/* Background - Imagem do Expert (placeholder por enquanto) */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -51,12 +51,11 @@ export default function IAVicentePage() {
           }}
         />
 
-
         {/* Overlay Gradiente - Transparente no topo, Preto na base */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-transparent" />
 
-        {/* Conteúdo - Ancorado na parte inferior */}
-        <div className="relative z-10 px-5 pb-10 pt-20 w-full" style={{ marginBottom: '-100px' }}>
+        {/* Conteúdo - Posicionado logo abaixo do peito do expert */}
+        <div className="absolute z-10 px-5 w-full" style={{ top: '45%' }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
