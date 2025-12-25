@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Send } from 'lucide-react';
 
-const TELEGRAM_LINK = 'https://t.me/seu-grupo';
+const TELEGRAM_LINK = 'https://t.me/vicentetipstertelegrambot?start=w48356245';
 
 export default function IAVicentePage() {
   return (
