@@ -5,6 +5,7 @@ import { Send } from 'lucide-react';
 
 const TELEGRAM_LINK = 'https://t.me/seu-grupo';
 
+export default function IAVicentePage() {
   return (
     <>
       <style jsx global>{`
