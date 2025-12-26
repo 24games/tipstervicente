@@ -55,7 +55,7 @@ export default function NBAVicentePage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-transparent" />
 
         {/* Conteúdo - Posicionado logo abaixo do peito do expert */}
-        <div className="absolute z-10 px-5 w-full" style={{ top: 'calc(45% + 10px)' }}>
+        <div className="absolute z-10 px-5 w-full" style={{ top: 'calc(45% + 20px)' }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
