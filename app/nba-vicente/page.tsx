@@ -55,7 +55,7 @@ export default function NBAVicentePage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-transparent" />
 
         {/* Conteúdo - Posicionado logo abaixo do peito do expert */}
-        <div className="absolute z-10 px-5 w-full" style={{ top: 'calc(45% - 20px)' }}>
+        <div className="absolute z-10 px-5 w-full" style={{ top: 'calc(45% - 5px)' }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -67,10 +67,10 @@ export default function NBAVicentePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-white text-3xl sm:text-4xl md:text-5xl font-black leading-tight"
+              className="text-white text-2xl sm:text-3xl md:text-4xl font-black leading-tight"
             >
               Deja que mi equipo y yo{' '}
-              <span className="text-[#00C853]">hagamos la pega</span>
+              <span className="bg-[#24A1DE] text-white px-2 py-1 rounded">hagamos la pega</span>
               {' '}por ti
             </motion.h1>
 
@@ -81,7 +81,7 @@ export default function NBAVicentePage() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-white text-base sm:text-lg md:text-xl leading-relaxed text-center"
             >
-              15 especialistas gringos. Análisis de patrones 24/7. El grupo de NBA más grande de Chile{' '}
+              <span className="font-bold">15 especialistas gringos</span>. <span className="font-bold">Análisis de patrones 24/7</span>. El grupo de NBA más grande de Chile{' '}
               <span className="text-2xl">🏀</span>
             </motion.p>
 
