@@ -43,12 +43,10 @@ export default function NBAVicentePage() {
       {/* Container Principal - Fullscreen estilo Stories */}
       <div className="relative min-h-screen w-full overflow-hidden">
         {/* Background - Imagem NBA */}
-        {/* INSTRUÇÃO: Coloque sua imagem de background NBA nesta pasta: public/nba-vicente/images/ */}
-        {/* E atualize o nome do arquivo abaixo (substitua 'background-nba.webp' pelo nome real do seu arquivo) */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/nba-vicente/images/background-nba.webp)',
+            backgroundImage: 'url(/nba-vicente/images/background%20nba%20web.webp)',
             backgroundColor: '#1a1a1a',
           }}
         />
