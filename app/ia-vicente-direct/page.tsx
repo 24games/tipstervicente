@@ -3,9 +3,9 @@
 import { motion } from 'framer-motion';
 import { Send } from 'lucide-react';
 
-const TELEGRAM_LINK = 'https://t.me/vicentetipstertelegrambot?start=w48356245';
+const TELEGRAM_LINK = 'https://t.me/+OuUiKP-Rl35kNGFh';
 
-export default function IAVicentePage() {
+export default function IAVicenteDirectPage() {
   return (
     <>
       <style jsx global>{`
