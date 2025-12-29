@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
-const TELEGRAM_LINK = 'https://t.me/seu-grupo';
+const TELEGRAM_LINK = 'https://t.me/vicentetipstertelegrambot?start=w48640146';
 
 export default function BilheteAcaoPage() {
   const [timeLeft, setTimeLeft] = useState(300); // 5 minutos em segundos
@@ -214,7 +214,7 @@ export default function BilheteAcaoPage() {
             <span className="gradient-text-animated font-bold">ALTO</span>, poniendo solo el vuelto del pan
           </motion.p>
 
-          {/* Botão CTA com ícone Telegram */}
+          {/* Botão CTA */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
