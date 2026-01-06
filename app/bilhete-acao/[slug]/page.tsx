@@ -6,6 +6,7 @@ import { useParams } from 'next/navigation';
 
 // Mapeamento de slugs para links do Telegram
 const TELEGRAM_LINKS: Record<string, string> = {
+  // Slugs antigos (mantidos para compatibilidade)
   'cr1-lakers': 'https://t.me/vicentetipstertelegrambot?start=w48640146',
   'cr2-lakers': 'https://t.me/vicentetipstertelegrambot?start=w48640586',
   'cr3-lakers': 'https://t.me/vicentetipstertelegrambot?start=w48640588',
@@ -13,10 +14,21 @@ const TELEGRAM_LINKS: Record<string, string> = {
   'cr5-manchester': 'https://t.me/vicentetipstertelegrambot?start=w48640698',
   'cr6-manchester': 'https://t.me/vicentetipstertelegrambot?start=w48640805',
   'cr7-manchester': 'https://t.me/vicentetipstertelegrambot?start=w48640842',
+  // Novos slugs para rastreamento UTM
+  '0601-cr1': 'https://t.me/vicentetipstertelegrambot?start=w48846093',
+  '0601-cr2': 'https://t.me/vicentetipstertelegrambot?start=w48848022',
+  '0601-cr3': 'https://t.me/vicentetipstertelegrambot?start=w48848023',
+  '0601-cr4': 'https://t.me/vicentetipstertelegrambot?start=w48848243',
+  '0601-cr5': 'https://t.me/vicentetipstertelegrambot?start=w48848389',
+  '0601-cr6': 'https://t.me/vicentetipstertelegrambot?start=w48848394',
+  '0601-cr7': 'https://t.me/vicentetipstertelegrambot?start=w48848689',
+  '0601-cr8': 'https://t.me/vicentetipstertelegrambot?start=w48849313',
+  '0601-cr9': 'https://t.me/vicentetipstertelegrambot?start=w48849471',
+  '0601-cr10': 'https://t.me/vicentetipstertelegrambot?start=w48849613',
 };
 
-// Link padrão (fallback)
-const DEFAULT_TELEGRAM_LINK = 'https://t.me/vicentetipstertelegrambot?start=w48640146';
+// Link padrão (fallback) - usa o link do CR1
+const DEFAULT_TELEGRAM_LINK = 'https://t.me/vicentetipstertelegrambot?start=w48846093';
 
 export default function BilheteAcaoSlugPage() {
   const params = useParams();
