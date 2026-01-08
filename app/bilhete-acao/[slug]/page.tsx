@@ -14,7 +14,7 @@ const TELEGRAM_LINKS: Record<string, string> = {
   'cr5-manchester': 'https://t.me/vicentetipstertelegrambot?start=w48640698',
   'cr6-manchester': 'https://t.me/vicentetipstertelegrambot?start=w48640805',
   'cr7-manchester': 'https://t.me/vicentetipstertelegrambot?start=w48640842',
-  // Novos slugs para rastreamento UTM
+  // Novos slugs para rastreamento UTM - Padrão 0601
   '0601-cr1': 'https://t.me/vicentetipstertelegrambot?start=w48846093',
   '0601-cr2': 'https://t.me/vicentetipstertelegrambot?start=w48848022',
   '0601-cr3': 'https://t.me/vicentetipstertelegrambot?start=w48848023',
@@ -25,6 +25,12 @@ const TELEGRAM_LINKS: Record<string, string> = {
   '0601-cr8': 'https://t.me/vicentetipstertelegrambot?start=w48849313',
   '0601-cr9': 'https://t.me/vicentetipstertelegrambot?start=w48849471',
   '0601-cr10': 'https://t.me/vicentetipstertelegrambot?start=w48849613',
+  // Novos slugs para rastreamento UTM - Padrão 0801
+  '0801-cr11': 'https://t.me/vicentetipstertelegrambot?start=w48877610',
+  '0801-cr12': 'https://t.me/vicentetipstertelegrambot?start=w48877715',
+  '0801-cr13': 'https://t.me/vicentetipstertelegrambot?start=w48877787',
+  '0801-cr14': 'https://t.me/vicentetipstertelegrambot?start=w48877979',
+  '0801-cr15': 'https://t.me/vicentetipstertelegrambot?start=w48878125',
 };
 
 // Link padrão (fallback) - usa o link do CR1
