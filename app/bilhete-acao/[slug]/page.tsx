@@ -31,6 +31,11 @@ const TELEGRAM_LINKS: Record<string, string> = {
   '0801-cr13': 'https://t.me/vicentetipstertelegrambot?start=w48877787',
   '0801-cr14': 'https://t.me/vicentetipstertelegrambot?start=w48877979',
   '0801-cr15': 'https://t.me/vicentetipstertelegrambot?start=w48878125',
+  // Novos slugs para rastreamento UTM - Padrão 1001
+  '1001-cr17': 'https://t.me/vicentetipstertelegrambot?start=w48878755',
+  '1001-cr18': 'https://t.me/vicentetipstertelegrambot?start=w48878942',
+  '1001-cr19': 'https://t.me/vicentetipstertelegrambot?start=w48879079',
+  '1001-cr20': 'https://t.me/vicentetipstertelegrambot?start=w48879143',
 };
 
 // Link padrão (fallback) - usa o link do CR1
